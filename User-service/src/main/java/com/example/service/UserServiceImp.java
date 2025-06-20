@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.Optional;
 
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -64,5 +65,10 @@ public class UserServiceImp implements UserSirvice {
 	                .map(auth->new LoginResponseDTO(auth.getName(),generateAndSaveJwtToken(auth,loginRequestDTO.email())))
 	                .orElseThrow(()->new BadCredentialsException("Invalid Username Or Password"));
 	    }
+
+		private String generateAndSaveJwtToken(Authentication auth, String email) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 }

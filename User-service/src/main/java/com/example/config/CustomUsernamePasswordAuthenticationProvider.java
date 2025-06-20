@@ -17,8 +17,17 @@ public class CustomUsernamePasswordAuthenticationProvider implements Authenticat
     UserDetailsService userDetailsService;
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public CustomUsernamePasswordAuthenticationProvider(UserDetailsService userDetailsService2,
-			BCryptPasswordEncoder passwordEncoder) {
+  
+
+	public CustomUsernamePasswordAuthenticationProvider(UserDetailsService userDetailsService,
+			BCryptPasswordEncoder bCryptPasswordEncoder) {
+		super();
+		this.userDetailsService = userDetailsService;
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
+
+	public CustomUsernamePasswordAuthenticationProvider() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
